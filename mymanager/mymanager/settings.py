@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import environ
-from dotenv import load_dotenv
-import os 
 
 env = environ.Env()
 environ.Env.read_env()
@@ -26,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c$s7j=eswk!wql!(nko@ja3vd29(7q4mwfu@&0wic!a(%^1p%v'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +35,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'payments.apps.PaymentsConfig',
-    'users.apps.UsersConfig',
+    'mymanager.payments',
+    'mymanager.users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
