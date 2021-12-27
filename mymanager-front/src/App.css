@@ -1,38 +1,133 @@
-.App {
+:root {
+  --Raleway: 'Raleway', sans-serif;
+  --thin: 200;
+}
+.thin-text {
+  font-size: small;
+}
+.bold-text {
+  font-size:large;
+  font-weight: 900;
+}
+body {
+  font-family: var(--Raleway);
+}
+.content {
+  margin: 3rem;
+}
+
+/* Grid */
+#user-description-container {
+  display: grid;
+  grid-template-areas: 
+    'image username username username'
+    'image description description description';
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid #b3b3b3;
+  border-radius: 1.5rem;
+  padding: 2rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#user-profil-container {
+  display: grid;
+  gap: 2rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#user-image {
+  display: inline-block;
+  grid-area: image;
+  margin: 0 auto;
+  border: 4px solid #b3b3b3;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 10rem;
+  padding: 0.5rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#user-name {
+  grid-area: username;
+  font-weight: 900;
+  font-size: 3rem;
+}
+#user-description {
+  grid-area: description;
+  font-family: var(--Raleway);
+  font-size: 1.5rem;
+}
+#user-image img {
+  position: relative;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#user-list-container {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+#user-box-img {
+  width: 5rem;
+}
+#user-box-img img{
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Flex */
+#user-box {
+  display: inline-flex;
+  flex-direction: row;
+  border: 1px solid #b3b3b3;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#user-Informations-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #b3b3b3;
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
+#user-Informations-container span {
+  font-weight: bold;
+}
+.alignIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 0.4rem;
+}
+#header-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: 0 0 2rem 0;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  box-shadow: 0 4px 6px -6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 4px 6px -6px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 4px 6px -6px rgba(0,0,0,0.5)
+}
+#header-container img {
+  position: relative;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 100%;
+
+  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.5);
 }
