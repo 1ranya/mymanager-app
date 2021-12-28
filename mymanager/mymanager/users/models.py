@@ -18,7 +18,7 @@ class Users(models.Model):
 
     # Contract  field Choices
     CONTRACTS = [('CDD', 'CDD'), ('CDI', 'CDI'), ('Stage', 'Stage'), ('Alternance', 'Alternance')]
-
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
