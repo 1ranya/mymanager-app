@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mymanager.payments',
     'mymanager.users',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
