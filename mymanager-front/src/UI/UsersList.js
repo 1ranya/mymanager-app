@@ -10,7 +10,7 @@ export default function UsersList() {
     useEffect(() => {
         async function getUsers () {
             const res = await (await fetch('http://localhost:8000/api/users')).json();
-            console.log("res", res[0].pk)
+            console.log("res", res)
             setUsersList(res)
         }
         getUsers();
@@ -22,15 +22,15 @@ export default function UsersList() {
                 <img src={profilPic} alt="Profil pic"/>
             </div>
             <div className='thin-text'>
-                <Link to={`/profile/${user.pk}`} className='bold-text'>{user.fields.first_name} {user.fields.last_name}</Link> <br/>
-                <span>{user.fields.position}</span><br/><br/>
+                <Link to={`/profile/${user.id}`} className='bold-text navbar-item'>{user.first_name} {user.last_name}</Link> <br/>
+                <span>{user.position}</span><br/><br/>
                 <div className='alignIcon'>
                     <IoIosMail size={15}/> 
-                    {user.fields.email}
+                    {user.email}
                 </div>
                 <div className='alignIcon'>
                     <BiPhone size={15}/> 
-                    {user.fields.phone}
+                    {user.phone}
                 </div>
             </div>
         </div>)

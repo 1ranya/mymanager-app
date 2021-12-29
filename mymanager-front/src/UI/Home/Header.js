@@ -5,12 +5,20 @@ export default function Header() {
     return (
         <div id='header-container'>
             <div>
-                <Link to="/users-list">Employés</Link>
+                <Link to="/users-list" className='navbar-item'>Employés</Link>
             </div>
-            <div>Créer un nouveau profile</div>
-            <div>Fiches de paies</div>
-            <div>Contactes</div>
-            <img src={ProfilPic} alt='Profil Pic'/>
+            <div>
+                <Link to="/new-profil" className='navbar-item'>Créer un nouveau profile</Link>
+            </div>
+            <div>
+                <Link to="/new-profil" className='navbar-item'>Fiches de paies</Link>
+            </div>
+            <div>
+                <Link to="/new-profil" className='navbar-item'>Contactes</Link>
+            </div>
+            <Link to="/new-profil" className='navbar-item'>
+                <img src={ProfilPic} alt='Profil Pic'/>
+            </Link>
         </div>
     )
 }
